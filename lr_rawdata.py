@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,9 +24,9 @@ df = df.dropna()
 print(df.shape)
 
 # split data into training and testing
-split = round(df.shape[0] * 0.8);
-df_train = df[:split]
-df_test = df[split:]
+split = round(df.shape[0] * 0.2);
+df_train = df[split:]
+df_test = df[:split]
 print('Shape of train data is'+str(df_train.shape))
 print('Shape of test data is'+str(df_test.shape))
 
