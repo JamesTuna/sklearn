@@ -11,6 +11,11 @@ y_train = [[7.5], [9.1], [13.2], [17.5], [19.3], [19.5]]
 X_test = [[6], [8], [11], [22]]
 y_test = [[8.3], [12.5], [15.4], [19.6]]
 
+lr_model = LinearRegression()
+lr_model.fit(X_train,y_train)
+score = lr_model.score(X_test,y_test)
+print("Linear regression score is: ",score)
+
 poly = PolynomialFeatures(degree=5)
 X_train_poly = poly.fit_transform(X_train)
 X_test_poly = poly.transform(X_test)

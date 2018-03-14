@@ -34,11 +34,14 @@ for i in range(0,predict.shape[0]):
     if(predict[i] != y_test[i]):
         wrongcount += 1
 
+print("size of testing set: ",predict.shape[0])
 # print # wrong predictions
 print("Number of wrong predictions is: ", wrongcount)
 
 # scatter plot the data with classes
-plt.scatter(X_test[:,0],X_test[:,1], c=predict)
+l = ('black','red')
+color = [ l[predict[i]] for i in range(X_test.shape[0])]
+plt.scatter(X_test[:,0],X_test[:,1], c=color)
 plt.xlabel("X_test[0]")
 plt.ylabel("X_test[1]")
 plt.title("Classification with Logistic Regression")
